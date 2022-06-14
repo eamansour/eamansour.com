@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("/fonts/poppins-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/poppins-regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/poppins-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/poppins-700.woff2") format("woff2");
+}
+
+html,
+body {
+  @apply scroll-smooth;
+}
+
+section {
+  @apply h-full w-full;
+}
+
+body {
+  @apply bg-grey-300;
+}
+
+.bg-blue-gradient {
+  @apply bg-gradient-to-tr from-blue to-blurple-100;
+}
+
+.text-blue-gradient,
+.hover\:text-blue-gradient:hover {
+  @apply text-transparent bg-clip-text bg-blue-gradient;
+}
+
+.tooltip:hover span {
+  opacity: 1;
+}
