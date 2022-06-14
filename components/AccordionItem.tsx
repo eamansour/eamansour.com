@@ -48,11 +48,12 @@ const AccordionItem = ({
   details,
 }: AccordionItemProps) => {
   const [isActive, setActive] = useState(false)
-  const isUrl = (s: string) => s.startsWith("https://")
+  const isUrl = (s: string) =>
+    ["https", "http"].some((protocol) => s.startsWith(`${protocol}://`))
 
   return (
     <div
-      className="mb-1 pb-1 bg-blurple-200 bg-opacity-80 hover:bg-opacity-90 transition-colors rounded-xl hover:cursor-pointer overflow-hidden"
+      className="mb-1 pb-1 bg-blurple-200 bg-opacity-70 hover:bg-opacity-80 transition-colors rounded-xl hover:cursor-pointer overflow-hidden"
       onClick={() =>
         isUrl(location)
           ? window.open(location, "_blank", "noopener noreferrer")

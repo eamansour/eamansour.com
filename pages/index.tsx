@@ -143,7 +143,7 @@ const Index: NextPage = () => {
         </motion.div>
         <hr className="text-transparent w-1/2 mb-5 pb-1 bg-blue-gradient rounded-xl" />
         <div className="w-full xl:w-2/3 flex flex-col overflow-x-hidden">
-          <ul className="flex justify-center text-xl font-bold">
+          <ul className="flex flex-col items-center md:flex-row md:justify-center text-xl font-bold">
             {Object.entries(tabs).map(([key, _]) => (
               <li
                 key={key}
