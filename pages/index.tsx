@@ -119,7 +119,7 @@ const Index: NextPage = () => {
       </section>
       <section
         id="about"
-        className="p-20 flex flex-col items-center bg-grey-200 "
+        className="px-10 py-20 flex flex-col items-center bg-grey-200 "
       >
         <h1 className="font-bold text-xl md:text-4xl">About</h1>
         <motion.div
@@ -127,7 +127,7 @@ const Index: NextPage = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           viewport={{ once: true }}
-          className="w-full lg:w-1/2 md:text-lg m-5 p-5 font-medium"
+          className="w-full lg:w-1/2 text-base md:text-lg m-5 p-5 font-medium"
         >
           <p>
             Passionate software engineer with interests in VR/AR, cloud
