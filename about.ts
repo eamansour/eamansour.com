@@ -65,7 +65,7 @@ export const Education = [
     subtitle: "BSc Computer Science with a Year in Industry",
     date: "Sep 2018 - Jun 2022",
     location: "London, UK",
-    details: ["Predicted First Class Honours"],
+    details: ["First Class Honours"],
   },
   {
     title: "Luton Sixth Form College",

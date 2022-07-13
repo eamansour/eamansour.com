@@ -44,7 +44,7 @@ const App = ({ Component, pageProps }: AppProps) => (
             transition={{ delay: 0.2 }}
             className="absolute font-semibold"
           >
-            Back to intro
+            Back to Intro
           </motion.p>
           <Image
             src="/images/EM.svg"
@@ -68,7 +68,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         ))}
       </div>
       <p className="text-sm md:text-base">
-        © 2022 Eamonn Mansour |{" "}
+        &copy; 2022 Eamonn Mansour |{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"

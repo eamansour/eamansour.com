@@ -68,7 +68,7 @@ const Index: NextPage = () => {
             transition={{ delay: 0.2, duration: 1 }}
             className="mx-10 mt-2 font-thin text-base md:text-lg lg:text-2xl"
           >
-            BSc Computer Science with a Year in Industry student at{" "}
+            BSc Computer Science with a Year in Industry Graduate from{" "}
             <a
               className="text-blue font-medium hover:text-blurple-100 transition-colors"
               href="https://www.kcl.ac.uk/"
