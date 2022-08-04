@@ -5,12 +5,13 @@ export const Experience = [
     date: "Jul 2020 - Aug 2021",
     location: "Hursley, UK",
     details: [
-      "Developed and maintained high-quality in-house tools for IBM staff and contractors dealing with IBM acquisitions.",
+      "Developed and maintained high-quality internal tools for over 50 members of IBM staff and contractors dealing with IBM acquisitions.",
       "Received IBM recognition from senior management upon fulfilling time-critical Nginx maintenance requests.",
       "Implemented several utilities in Kotlin and React tools to streamline software analysis during acquisitions.",
       "Followed an Agile (Scrum) methodology on a daily basis.",
+      "Prompted the creation of two internal support channels that enhanced communication between users and developers.",
       "Mentored 4 new starters and worked alongside team lead to review GitHub pull requests.",
-      "Led a team of 5 students to develop prototypes during company-wide hackathons.",
+      "Led a team of 5 students in developing prototypes during company-wide hackathons.",
     ],
   },
   {
@@ -20,8 +21,8 @@ export const Experience = [
     location: "Luton, UK",
     details: [
       "Supported store management with technical issues alongside daily duties.",
-      "Regularly assisted customers with stock requests and guidance.",
-      "Worked as part of a large team of staff, regularly mentoring 5+ new starters.",
+      "Assisted over 50 customers per day with stock requests and store guidance.",
+      "Worked as part of a large team of store staff, mentoring 8 new starters.",
       "Replenished and code checked store stock to enforce to food safety policies.",
     ],
   },
@@ -31,8 +32,7 @@ export const Experience = [
     date: "Jun 2017 - Aug 2017",
     location: "Luton, UK",
     details: [
-      "Led development in an electronic warfare awareness project using Unity and C#.",
-      "Adopted a Scrum software engineering methodology on a daily basis.",
+      "Led development in an electronic warfare awareness project for a team of 4 students using Unity and C#.",
       "Supported several Python-based Raspberry Pi camera integration projects by resolving blockages, leading to project completion.",
       "Implemented and maintained projects' documentation.",
     ],
@@ -43,8 +43,7 @@ export const Experience = [
     date: "Aug 2016 - Oct 2016",
     location: "Luton, UK",
     details: [
-      "Assisted the Service department by maintaining client data using SQL and custom software.",
-      "Fulfilled general duties to verify and process client data in Excel.",
+      "Maintained and processed sensitive data for over 100 clients using SQL and custom software.",
     ],
   },
   {
@@ -53,7 +52,7 @@ export const Experience = [
     date: "Jul 2015 - Aug 2015",
     location: "Luton, UK",
     details: [
-      "Administered sensitive academic information using SQL to maintain faculty organisation during exam periods.",
+      "Administered sensitive data for over 30 students using SQL to maintain faculty organisation during exam periods.",
       "Coordinated a 3-person team designing infographics for the university's summer events.",
     ],
   },
@@ -62,7 +61,7 @@ export const Experience = [
 export const Education = [
   {
     title: "King's College London",
-    subtitle: "BSc Computer Science with a Year in Industry",
+    subtitle: "BSc (Hons) Computer Science with a Year in Industry",
     date: "Sep 2018 - Jun 2022",
     location: "London, UK",
     details: ["First Class Honours"],
