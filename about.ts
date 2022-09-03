@@ -1,8 +1,8 @@
 export const Experience = [
   {
     title: "IBM",
-    subtitle: "Software Engineer (Placement Year)",
-    date: "Jul 2020 - Aug 2021",
+    subtitle: "Software Engineer",
+    date: "Jul 2020 - Aug 2021, Sep 2022 - Present",
     location: "Hursley, UK",
     details: [
       "Developed and maintained high-quality internal tools for over 50 members of IBM staff and contractors dealing with IBM acquisitions.",

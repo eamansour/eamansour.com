@@ -20,4 +20,11 @@ export const Projects = [
     tags: ["NextJS", "TypeScript", "Tailwind CSS", "Framer Motion"],
     description: "Learning and experimenting with modern web technologies.",
   },
+  {
+    name: "Pac-Man Markov Decision Process Agent",
+    url: "https://github.com/eamansour/pacman",
+    img: "pacman.png",
+    tags: ["Python", "AI"],
+    description: "AI agent that can play and win Pac-Man.",
+  },
 ]

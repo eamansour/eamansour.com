@@ -11,22 +11,13 @@ const App = ({ Component, pageProps }: AppProps) => (
     <Head>
       <meta charSet="UTF-8" />
       <title>Eamonn Mansour | Portfolio</title>
-      <meta
-        name="description"
-        content="Eamonn Mansour, BSc Computer Science with a Year in Industry student"
-      />
+      <meta name="description" content="Eamonn Mansour, Software Engineer" />
       <meta property="og:title" content="Eamonn Mansour" />
-      <meta
-        property="og:description"
-        content="BSc Computer Science with a Year in Industry student"
-      />
+      <meta property="og:description" content="Software Engineer" />
       <meta property="og:image" content="https://eamansour.com/images/EM.svg" />
       <meta property="og:url" content="https://eamansour.com/" />
       <meta property="twitter:title" content="Eamonn Mansour" />
-      <meta
-        property="twitter:description"
-        content="BSc Computer Science with a Year in Industry student"
-      />
+      <meta property="twitter:description" content="Software Engineer" />
       <meta
         property="twitter:image"
         content="https://eamansour.com/images/EM.svg"
