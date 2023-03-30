@@ -53,7 +53,7 @@ const AccordionItem = ({
 
   return (
     <div
-      className="mb-1 pb-1 bg-blurple-200 bg-opacity-70 hover:bg-opacity-80 transition-colors rounded-xl hover:cursor-pointer overflow-hidden"
+      className="w-3/4 mb-1 pb-1 border-b-2 border-blurple-100 hover:border-blue hover:bg-grey-100 hover:bg-opacity-50 transition-colors hover:cursor-pointer overflow-hidden"
       onClick={() =>
         isUrl(location)
           ? window.open(location, "_blank", "noopener noreferrer")

@@ -11,30 +11,24 @@ import Card from "../components/Card"
 import Layout from "../components/Layout"
 import SkillIcons from "../components/SkillIcons"
 import SocialIcons from "../components/SocialIcons"
-import { Certifications, Education, Experience } from "../about"
-import { Projects } from "../projects"
+import { Certifications, Education, Experience } from "../data/about"
+import { Projects } from "../data/projects"
 import AccordionItem from "../components/AccordionItem"
 
-const nameVariants = {
+const getVariants = ({startY = 0, initialDelay = 0, initialDuration = 1}) => ({
   visible: {
     opacity: 1,
     y: 0,
+    transition: {
+      delay: initialDelay,
+      duration: initialDuration,
+    },
   },
   hidden: {
     opacity: 0,
-    y: 30,
+    y: startY,
   },
-}
-
-const scrollVariants = {
-  visible: {
-    opacity: 1,
-    transition: {
-      delay: 3,
-    },
-  },
-  hidden: { opacity: 0 },
-}
+})
 
 const Index: NextPage = () => {
   const [tabId, setTabId] = useState("experience")
@@ -55,8 +49,7 @@ const Index: NextPage = () => {
           <motion.h1
             initial="hidden"
             animate="visible"
-            variants={nameVariants}
-            transition={{ duration: 1 }}
+            variants={getVariants({startY: 30})}
             className="text-blue-gradient font-bold text-3xl md:text-5xl lg:text-6xl"
           >
             Eamonn Mansour
@@ -64,8 +57,7 @@ const Index: NextPage = () => {
           <motion.h2
             initial="hidden"
             animate="visible"
-            variants={nameVariants}
-            transition={{ delay: 0.2, duration: 1 }}
+            variants={getVariants({startY: 30, initialDelay: 0.2})}
             className="mx-10 mt-2 font-thin text-base md:text-lg lg:text-2xl"
           >
             Software Engineer at{" "}
@@ -84,7 +76,7 @@ const Index: NextPage = () => {
           <motion.a
             initial="hidden"
             animate="visible"
-            variants={scrollVariants}
+            variants={getVariants({startY: 0, initialDelay: 3})}
             href="#projects"
             className="flex flex-col items-center hover:text-blue transition-colors"
           >
@@ -97,7 +89,15 @@ const Index: NextPage = () => {
         id="projects"
         className="pb-20 bg-grey-200 flex flex-col items-center"
       >
-        <h1 className="text-xl font-bold my-16 md:text-4xl">Latest Projects</h1>
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={getVariants({startY: 30})}
+          className="text-xl font-bold my-16 md:text-4xl"
+        >
+          Latest Projects
+        </motion.h1>
         <div className="container w-full h-full flex flex-col space-y-7 items-center">
           {Projects.map((project) => (
             <Card
@@ -112,21 +112,47 @@ const Index: NextPage = () => {
         </div>
       </section>
       <section className="h-full py-20 flex flex-col items-center bg-blue-gradient">
-        <h1 className="text-xl font-bold md:text-4xl">Skills</h1>
-        <div className="w-full m-5 p-5 overflow-x-hidden">
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={getVariants({startY: 30, initialDelay: 0.2, initialDuration: 0.5})}
+          className="text-xl font-bold md:text-4xl"
+        >
+          Skills
+        </motion.h1>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={getVariants({startY: 30, initialDelay: 0.5})}
+          className="flex flex-col items-center m-5 p-5"
+        >
+          <p className="pb-5 md:text-lg font-medium">
+            One of the essential qualities of a software engineer is the ability to pick up new skills and stay up-to-date with the latest technologies,
+            so here are some technologies that I use frequently!
+          </p>
           <SkillIcons />
-        </div>
+        </motion.div>
       </section>
       <section
         id="about"
         className="px-10 py-20 flex flex-col items-center bg-grey-200 "
       >
-        <h1 className="font-bold text-xl md:text-4xl">About</h1>
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
+        <motion.h1
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
+          variants={getVariants({startY: 30, initialDelay: 0.2, initialDuration: 0.5})}
+          className="font-bold text-xl md:text-4xl"
+        >
+          About
+        </motion.h1>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={getVariants({startY: 50, initialDelay: 0.2, initialDuration: 0.5})}
           className="w-full lg:w-1/2 text-base md:text-lg m-5 p-5 font-medium"
         >
           <p>
@@ -171,7 +197,7 @@ const Index: NextPage = () => {
                       visible: { opacity: 1, x: 0 },
                     }}
                     transition={{ duration: 0.5 }}
-                    className="container mx-auto my-5"
+                    className="flex flex-col items-center justify-center my-5"
                   >
                     {value.map((item) => (
                       <AccordionItem

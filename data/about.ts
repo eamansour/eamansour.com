@@ -2,13 +2,28 @@ export const Experience = [
   {
     title: "IBM",
     subtitle: "Software Engineer",
-    date: "Jul 2020 - Aug 2021, Sep 2022 - Present",
+    date: "Sep 2022 - Present",
     location: "Hursley, UK",
+    website: "https://www.ibm.com/",
+    details: [
+      "Contributed to Galasa, an open-source integration testing framework for z/OS applications.",
+      "Remediated over 25 vulnerabilities in several open-source codebases.",
+      "Implemented Gradle support into Galasa to enhance the user experience and increase the framework's flexibility.",
+      "Streamlined the installation process of a Galasa Ecosystem using Helm, reducing time to deployment by ~70%.",
+      "Enhanced CI/CD pipelines to support branch-level builds for developers to safely test changes.",
+      "Implemented GitHub issue templates to standardise the team's issue creation process.",
+    ],
+  },
+  {
+    title: "IBM",
+    subtitle: "Software Engineer Intern",
+    date: "Jul 2020 - Aug 2021",
+    location: "Hursley, UK",
+    website: "https://www.ibm.com/",
     details: [
       "Developed and maintained high-quality internal tools for over 50 members of IBM staff and contractors dealing with IBM acquisitions.",
       "Received IBM recognition from senior management upon fulfilling time-critical Nginx maintenance requests.",
       "Implemented several utilities in Kotlin and React tools to streamline software analysis during acquisitions.",
-      "Followed an Agile (Scrum) methodology on a daily basis.",
       "Prompted the creation of two internal support channels that enhanced communication between users and developers.",
       "Mentored 4 new starters and worked alongside team lead to review GitHub pull requests.",
       "Led a team of 5 students in developing prototypes during company-wide hackathons.",
@@ -19,6 +34,7 @@ export const Experience = [
     subtitle: "Trading Assistant",
     date: "May 2018 - Apr 2020",
     location: "Luton, UK",
+    website: "https://www.sainsburys.co.uk/",
     details: [
       "Supported store management with technical issues alongside daily duties.",
       "Assisted over 50 customers per day with stock requests and store guidance.",
@@ -31,6 +47,7 @@ export const Experience = [
     subtitle: "Software Engineer (Summer Intern)",
     date: "Jun 2017 - Aug 2017",
     location: "Luton, UK",
+    website: "https://www.leonardo.com/",
     details: [
       "Led development in an electronic warfare awareness project for a team of 4 students using Unity and C#.",
       "Supported several Python-based Raspberry Pi camera integration projects by resolving blockages, leading to project completion.",
@@ -42,6 +59,7 @@ export const Experience = [
     subtitle: "Volunteer Charity Administrator",
     date: "Aug 2016 - Oct 2016",
     location: "Luton, UK",
+    website: "https://www.ageconcernluton.org.uk/",
     details: [
       "Maintained and processed sensitive data for over 100 clients using SQL and custom software.",
     ],
@@ -51,6 +69,7 @@ export const Experience = [
     subtitle: "Faculty Office Intern",
     date: "Jul 2015 - Aug 2015",
     location: "Luton, UK",
+    website: "https://www.beds.ac.uk/",
     details: [
       "Administered sensitive data for over 30 students using SQL to maintain faculty organisation during exam periods.",
       "Coordinated a 3-person team designing infographics for the university's summer events.",

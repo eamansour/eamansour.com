@@ -1,135 +1,67 @@
-import {
-  FaPython,
-  FaJava,
-  FaHtml5,
-  FaCss3,
-  FaRust,
-  FaPhp,
-  FaGit,
-  FaDocker,
-  FaLinux,
-  FaJenkins,
-  FaNodeJs,
-  FaReact,
-  FaUnity,
-} from "react-icons/fa"
-import {
-  SiBlender,
-  SiCplusplus,
-  SiCsharp,
-  SiGnubash,
-  SiJavascript,
-  SiKotlin,
-  SiMysql,
-  SiScala,
-  SiTravisci,
-  SiTypescript,
-} from "react-icons/si"
+import { motion } from "framer-motion"
+import { Languages, Technologies } from "../data/skills"
 
-const Skills = [
-  {
-    name: "C#",
-    Icon: SiCsharp,
+const iconVariants = (startY: number) => ({
+  hover: {
+    y: -10,
+    transition: {
+      duration: 0.7,
+    },
   },
-  {
-    name: "Python",
-    Icon: FaPython,
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.2,
+      duration: 0.5,
+    },
   },
-  {
-    name: "Java",
-    Icon: FaJava,
+  hidden: {
+    opacity: 0,
+    y: startY,
   },
-  {
-    name: "C++",
-    Icon: SiCplusplus,
-  },
-  {
-    name: "TypeScript",
-    Icon: SiTypescript,
-  },
-  {
-    name: "JavaScript",
-    Icon: SiJavascript,
-  },
-  {
-    name: "HTML5",
-    Icon: FaHtml5,
-  },
-  {
-    name: "CSS",
-    Icon: FaCss3,
-  },
-  {
-    name: "Kotlin",
-    Icon: SiKotlin,
-  },
-  {
-    name: "Rust",
-    Icon: FaRust,
-  },
-  {
-    name: "Bash",
-    Icon: SiGnubash,
-  },
-  {
-    name: "Scala",
-    Icon: SiScala,
-  },
-  {
-    name: "PHP",
-    Icon: FaPhp,
-  },
-  {
-    name: "MySQL",
-    Icon: SiMysql,
-  },
-  {
-    name: "Git",
-    Icon: FaGit,
-  },
-  {
-    name: "Docker",
-    Icon: FaDocker,
-  },
-  {
-    name: "Unix/Linux",
-    Icon: FaLinux,
-  },
-  {
-    name: "Travis CI",
-    Icon: SiTravisci,
-  },
-  {
-    name: "Jenkins",
-    Icon: FaJenkins,
-  },
-  {
-    name: "Node.js",
-    Icon: FaNodeJs,
-  },
-  {
-    name: "React",
-    Icon: FaReact,
-  },
-  {
-    name: "Unity",
-    Icon: FaUnity,
-  },
-  {
-    name: "Blender",
-    Icon: SiBlender,
-  },
-]
+})
 
 const SkillIcons = () => {
   return (
-    <div className="w-min flex text-8xl animate-infinite-slide">
-      {Skills.map(({ name, Icon }) => (
-        <div key={name} className="py-5 mx-20 flex flex-col items-center">
-          <Icon />
-          <p className="p-2 text-lg font-medium">{name}</p>
-        </div>
-      ))}
+    <div className="p-5 flex flex-col md:flex-row text-lg md:text-2xl font-bold whitespace-nowrap">
+      <div className="flex flex-col items-center">
+        <h2>Languages</h2>
+        <ul className="p-3 grid grid-cols-2 xl:grid-cols-3 text-4xl xl:text-6xl">
+          {Languages.map(({ name, Icon }) => (
+            <motion.li 
+              key={name} 
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true }}
+              variants={iconVariants(-50)}
+              className={`p-5 mx-14 flex flex-col items-center hover:text-orange-50 transition-colors`}
+            >
+              <Icon />
+              <p className="p-2 text-lg font-medium">{name}</p>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex flex-col items-center">
+        <h2>Technologies</h2>
+        <ul className="p-3 grid grid-cols-2 xl:grid-cols-3 text-4xl xl:text-6xl">
+          {Technologies.map(({ name, Icon }) => (
+            <motion.li 
+              key={name}
+              initial="hidden"
+              whileInView="visible"
+              whileHover="hover"
+              viewport={{ once: true }}
+              variants={iconVariants(50)}
+              className="p-5 mx-14 flex flex-col items-center hover:text-orange-50 transition-colors">
+              <Icon />
+              <p className="p-2 text-lg font-medium">{name}</p>
+            </motion.li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

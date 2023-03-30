@@ -59,7 +59,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         ))}
       </div>
       <p className="text-sm md:text-base">
-        &copy; 2022 Eamonn Mansour |{" "}
+        &copy; 2023 Eamonn Mansour |{" "}
         <a
           target="_blank"
           rel="noopener noreferrer"

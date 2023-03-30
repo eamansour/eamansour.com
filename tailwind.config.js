@@ -24,6 +24,12 @@ module.exports = {
       },
       blue: "#09b0f2",
       turqoise: "#49ddc1",
+      orange: {
+        50: "#ffba08",
+        100: "#faa307",
+        200: "#f48c06",
+        300: "#e85d04",
+      }
     },
     extend: {
       fontFamily: {

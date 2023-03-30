@@ -48,6 +48,10 @@ body {
   @apply bg-gradient-to-tr from-blue to-blurple-100;
 }
 
+.bg-orange-gradient {
+  @apply bg-gradient-to-r from-orange-50 to-orange-300;
+}
+
 .text-blue-gradient,
 .hover\:text-blue-gradient:hover {
   @apply text-transparent bg-clip-text bg-blue-gradient;
