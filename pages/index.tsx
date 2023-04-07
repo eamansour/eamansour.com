@@ -128,7 +128,7 @@ const Index: NextPage = () => {
           variants={getVariants({startY: 30, initialDelay: 0.5})}
           className="flex flex-col items-center m-5 p-5"
         >
-          <p className="pb-5 md:text-lg font-medium">
+          <p className="container px-5 pb-5 md:text-lg font-medium">
             One of the essential qualities of a software engineer is the ability to pick up new skills and stay up-to-date with the latest technologies,
             so here are some technologies that I use frequently!
           </p>
