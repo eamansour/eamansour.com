@@ -24,7 +24,7 @@ const iconVariants = (startY: number) => ({
 
 const SkillIcons = () => {
   return (
-    <div className="p-5 flex flex-col md:flex-row text-lg md:text-2xl font-bold whitespace-nowrap">
+    <div className="pt-5 flex flex-col md:flex-row text-lg md:text-2xl font-bold whitespace-nowrap">
       <div className="flex flex-col items-center">
         <h2>Languages</h2>
         <ul className="p-3 grid grid-cols-2 xl:grid-cols-3 text-4xl xl:text-6xl">
@@ -36,10 +36,10 @@ const SkillIcons = () => {
               whileHover="hover"
               viewport={{ once: true }}
               variants={iconVariants(-50)}
-              className={`p-5 mx-14 flex flex-col items-center hover:text-orange-50 transition-colors`}
+              className={`md:mx-14 p-5 flex flex-col items-center hover:text-orange-50 transition-colors`}
             >
               <Icon />
-              <p className="p-2 text-lg font-medium">{name}</p>
+              <p className="p-2 text-sm md:text-lg font-medium">{name}</p>
             </motion.li>
           ))}
         </ul>
@@ -55,9 +55,9 @@ const SkillIcons = () => {
               whileHover="hover"
               viewport={{ once: true }}
               variants={iconVariants(50)}
-              className="p-5 mx-14 flex flex-col items-center hover:text-orange-50 transition-colors">
+              className="md:mx-14 p-5 flex flex-col items-center hover:text-orange-50 transition-colors">
               <Icon />
-              <p className="p-2 text-lg font-medium">{name}</p>
+              <p className="p-2 text-sm md:text-lg font-medium">{name}</p>
             </motion.li>
           ))}
         </ul>

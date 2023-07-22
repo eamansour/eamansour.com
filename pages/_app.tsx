@@ -27,7 +27,7 @@ const App = ({ Component, pageProps }: AppProps) => (
 
     <Component {...pageProps} />
     <footer className="text-white bg-black py-36 flex flex-col items-center space-y-4">
-      <Link href="/">
+      <Link href="/#intro">
         <div className="flex justify-center hover:text-blue hover:transition-colors hover:cursor-pointer">
           <motion.p
             initial={{ opacity: 0, y: 20 }}

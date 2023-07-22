@@ -1,8 +1,8 @@
 import {
   AnimatePresence,
   motion,
+  useScroll,
   useTransform,
-  useViewportScroll,
 } from "framer-motion"
 import type { NextPage } from "next"
 import { useState } from "react"
@@ -13,7 +13,7 @@ import SkillIcons from "../components/SkillIcons"
 import SocialIcons from "../components/SocialIcons"
 import { Certifications, Education, Experience } from "../data/about"
 import { Projects } from "../data/projects"
-import AccordionItem from "../components/AccordionItem"
+import AboutItem from "../components/AboutItem"
 
 const getVariants = ({startY = 0, initialDelay = 0, initialDuration = 1}) => ({
   visible: {
@@ -37,7 +37,7 @@ const Index: NextPage = () => {
     education: Education,
     certifications: Certifications,
   }
-  const { scrollYProgress } = useViewportScroll()
+  const { scrollYProgress } = useScroll()
   const scrollDownRange = [0, 0.15]
   const opacity = useTransform(scrollYProgress, scrollDownRange, [1, 0])
   const y = useTransform(scrollYProgress, scrollDownRange, [0, 50])
@@ -199,14 +199,14 @@ const Index: NextPage = () => {
                     transition={{ duration: 0.5 }}
                     className="flex flex-col items-center justify-center my-5"
                   >
-                    {value.map((item) => (
-                      <AccordionItem
-                        key={item.title}
+                    {value.map((item, index) => (
+                      <AboutItem
+                        key={`${item.title}-${index}`}
                         title={item.title}
                         subtitle={item.subtitle}
                         date={item.date}
+                        href={item.href}
                         location={item.location}
-                        details={item.details}
                       />
                     ))}
                   </motion.div>
