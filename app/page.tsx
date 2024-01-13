@@ -1,21 +1,26 @@
+'use client';
+
 import {
   AnimatePresence,
   motion,
   useScroll,
   useTransform,
-} from "framer-motion"
-import type { NextPage } from "next"
-import { useState } from "react"
-import { FaChevronDown } from "react-icons/fa"
-import Card from "../components/Card"
-import Layout from "../components/Layout"
-import SkillIcons from "../components/SkillIcons"
-import SocialIcons from "../components/SocialIcons"
-import { Certifications, Education, Experience } from "../data/about"
-import { Projects } from "../data/projects"
-import AboutItem from "../components/AboutItem"
+} from 'framer-motion';
+import type { NextPage } from 'next';
+import { useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
+import Card from '@/components/Card';
+import SkillIcons from '@/components/SkillIcons';
+import SocialIcons from '@/components/SocialIcons';
+import { Certifications, Education, Experience } from '@/data/about';
+import { Projects } from '@/data/projects';
+import AboutItem from '@/components/AboutItem';
 
-const getVariants = ({startY = 0, initialDelay = 0, initialDuration = 1}) => ({
+const getVariants = ({
+  startY = 0,
+  initialDelay = 0,
+  initialDuration = 1,
+}) => ({
   visible: {
     opacity: 1,
     y: 0,
@@ -28,28 +33,28 @@ const getVariants = ({startY = 0, initialDelay = 0, initialDuration = 1}) => ({
     opacity: 0,
     y: startY,
   },
-})
+});
 
 const Index: NextPage = () => {
-  const [tabId, setTabId] = useState("experience")
+  const [tabId, setTabId] = useState('experience');
   const tabs = {
     experience: Experience,
     education: Education,
     certifications: Certifications,
-  }
-  const { scrollYProgress } = useScroll()
-  const scrollDownRange = [0, 0.15]
-  const opacity = useTransform(scrollYProgress, scrollDownRange, [1, 0])
-  const y = useTransform(scrollYProgress, scrollDownRange, [0, 50])
+  };
+  const { scrollYProgress } = useScroll();
+  const scrollDownRange = [0, 0.15];
+  const opacity = useTransform(scrollYProgress, scrollDownRange, [1, 0]);
+  const y = useTransform(scrollYProgress, scrollDownRange, [0, 50]);
 
   return (
-    <Layout>
+    <main className="font-poppins text-white">
       <section id="intro" className="h-screen pb-10 flex flex-col">
         <div className="h-full flex flex-col justify-center items-center text-center">
           <motion.h1
             initial="hidden"
             animate="visible"
-            variants={getVariants({startY: 30})}
+            variants={getVariants({ startY: 30 })}
             className="text-blue-gradient font-bold text-3xl md:text-5xl lg:text-6xl"
           >
             Eamonn Mansour
@@ -57,10 +62,10 @@ const Index: NextPage = () => {
           <motion.h2
             initial="hidden"
             animate="visible"
-            variants={getVariants({startY: 30, initialDelay: 0.2})}
+            variants={getVariants({ startY: 30, initialDelay: 0.2 })}
             className="mx-10 mt-2 font-thin text-base md:text-lg lg:text-2xl"
           >
-            Software Engineer at{" "}
+            Software Engineer at{' '}
             <a
               className="text-blue font-medium hover:text-blurple-100 transition-colors"
               href="https://www.ibm.com/"
@@ -76,7 +81,7 @@ const Index: NextPage = () => {
           <motion.a
             initial="hidden"
             animate="visible"
-            variants={getVariants({startY: 0, initialDelay: 3})}
+            variants={getVariants({ startY: 0, initialDelay: 3 })}
             href="#projects"
             className="flex flex-col items-center hover:text-blue transition-colors"
           >
@@ -93,7 +98,7 @@ const Index: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={getVariants({startY: 30})}
+          variants={getVariants({ startY: 30 })}
           className="text-xl font-bold my-16 md:text-4xl"
         >
           Latest Projects
@@ -116,7 +121,11 @@ const Index: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={getVariants({startY: 30, initialDelay: 0.2, initialDuration: 0.5})}
+          variants={getVariants({
+            startY: 30,
+            initialDelay: 0.2,
+            initialDuration: 0.5,
+          })}
           className="text-xl font-bold md:text-4xl"
         >
           Skills
@@ -125,12 +134,13 @@ const Index: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={getVariants({startY: 30, initialDelay: 0.5})}
+          variants={getVariants({ startY: 30, initialDelay: 0.5 })}
           className="flex flex-col items-center m-5 p-5"
         >
           <p className="container px-5 pb-5 md:text-lg font-medium">
-            One of the essential qualities of a software engineer is the ability to pick up new skills and stay up-to-date with the latest technologies,
-            so here are some technologies that I use frequently!
+            One of the essential qualities of a software engineer is the ability
+            to pick up new skills and stay up-to-date with the latest
+            technologies, so here are some technologies that I use frequently!
           </p>
           <SkillIcons />
         </motion.div>
@@ -143,7 +153,11 @@ const Index: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={getVariants({startY: 30, initialDelay: 0.2, initialDuration: 0.5})}
+          variants={getVariants({
+            startY: 30,
+            initialDelay: 0.2,
+            initialDuration: 0.5,
+          })}
           className="font-bold text-xl md:text-4xl"
         >
           About
@@ -152,7 +166,11 @@ const Index: NextPage = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          variants={getVariants({startY: 50, initialDelay: 0.2, initialDuration: 0.5})}
+          variants={getVariants({
+            startY: 50,
+            initialDelay: 0.2,
+            initialDuration: 0.5,
+          })}
           className="w-full lg:w-1/2 text-base md:text-lg m-5 p-5 font-medium"
         >
           <p>
@@ -174,7 +192,7 @@ const Index: NextPage = () => {
               <li
                 key={key}
                 className={`mx-5 my-2 ${
-                  tabId === key ? "text-blue" : ""
+                  tabId === key ? 'text-blue' : ''
                 } hover:text-blurple-100 transition-colors hover:cursor-pointer capitalize`}
                 onClick={() => setTabId(key)}
               >
@@ -193,7 +211,7 @@ const Index: NextPage = () => {
                     animate="visible"
                     exit="hidden"
                     variants={{
-                      hidden: { opacity: 0, x: "100vw" },
+                      hidden: { opacity: 0, x: '100vw' },
                       visible: { opacity: 1, x: 0 },
                     }}
                     transition={{ duration: 0.5 }}
@@ -215,8 +233,8 @@ const Index: NextPage = () => {
           </AnimatePresence>
         </div>
       </section>
-    </Layout>
-  )
-}
+    </main>
+  );
+};
 
-export default Index
+export default Index;

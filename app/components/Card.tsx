@@ -1,11 +1,11 @@
-import { motion } from "framer-motion"
+import { motion } from 'framer-motion';
 
 interface CardProps {
-  title: string
-  description: string
-  tags: string[]
-  url: string
-  img: string
+  title: string;
+  description: string;
+  tags: string[];
+  url: string;
+  img: string;
 }
 
 const cardVariants = {
@@ -27,7 +27,7 @@ const cardVariants = {
   tap: {
     scale: 0.95,
   },
-}
+};
 
 const Card = ({ title, description, tags, url, img }: CardProps) => {
   return (
@@ -62,7 +62,7 @@ const Card = ({ title, description, tags, url, img }: CardProps) => {
         </motion.div>
       </motion.a>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

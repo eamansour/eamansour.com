@@ -1,4 +1,4 @@
-import { AboutItemProps } from "../components/AboutItem"
+import { AboutItemProps } from "@/components/AboutItem"
 
 export const Experience: AboutItemProps[] = [
   {

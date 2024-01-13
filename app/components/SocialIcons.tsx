@@ -1,23 +1,23 @@
-import { motion } from "framer-motion"
-import { FaFileAlt, FaGithub, FaLinkedinIn } from "react-icons/fa"
+import { motion } from 'framer-motion';
+import { FaFileAlt, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export const Socials = [
   {
-    name: "GitHub",
+    name: 'GitHub',
     Icon: FaGithub,
-    href: "https://github.com/eamansour",
+    href: 'https://github.com/eamansour',
   },
   {
-    name: "LinkedIn",
+    name: 'LinkedIn',
     Icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/in/eamonn-mansour",
+    href: 'https://www.linkedin.com/in/eamonn-mansour',
   },
   {
-    name: "CV",
+    name: 'CV',
     Icon: FaFileAlt,
-    href: "/pdf/EamonnMansourCV.pdf",
+    href: '/pdf/EamonnMansourCV.pdf',
   },
-]
+];
 
 const iconVariants = {
   visible: {
@@ -32,7 +32,7 @@ const iconVariants = {
     opacity: 0,
     y: -20,
   },
-}
+};
 
 const SocialIcons = () => (
   <motion.div
@@ -56,6 +56,6 @@ const SocialIcons = () => (
       </motion.a>
     ))}
   </motion.div>
-)
+);
 
-export default SocialIcons
+export default SocialIcons;

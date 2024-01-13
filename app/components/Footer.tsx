@@ -1,31 +1,12 @@
-import "../styles/globals.css"
-import type { AppProps } from "next/app"
-import Head from "next/head"
-import Image from "next/image"
-import { Socials } from "../components/SocialIcons"
-import { motion } from "framer-motion"
-import Link from "next/link"
+'use client';
 
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <Head>
-      <meta charSet="UTF-8" />
-      <title>Eamonn Mansour | Portfolio</title>
-      <meta name="description" content="Eamonn Mansour, Software Engineer" />
-      <meta property="og:title" content="Eamonn Mansour" />
-      <meta property="og:description" content="Software Engineer" />
-      <meta property="og:image" content="https://eamansour.com/images/EM.svg" />
-      <meta property="og:url" content="https://eamansour.com/" />
-      <meta property="twitter:title" content="Eamonn Mansour" />
-      <meta property="twitter:description" content="Software Engineer" />
-      <meta
-        property="twitter:image"
-        content="https://eamansour.com/images/EM.svg"
-      />
-      <link rel="icon" href="/images/favicon.ico" />
-    </Head>
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Socials } from '@/components/SocialIcons';
 
-    <Component {...pageProps} />
+const Footer = () => {
+  return (
     <footer className="text-white bg-black py-36 flex flex-col items-center space-y-4">
       <Link href="/#intro">
         <div className="flex justify-center hover:text-blue hover:transition-colors hover:cursor-pointer">
@@ -59,7 +40,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         ))}
       </div>
       <p className="text-sm md:text-base">
-        &copy; 2023 Eamonn Mansour |{" "}
+        &copy; {new Date().getFullYear()} Eamonn Mansour |{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -70,7 +51,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         </a>
       </p>
     </footer>
-  </>
-)
+  );
+};
 
-export default App
+export default Footer;

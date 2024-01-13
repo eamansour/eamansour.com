@@ -1,11 +1,11 @@
-import { FiExternalLink } from "react-icons/fi"
+import { FiExternalLink } from 'react-icons/fi';
 
 export interface AboutItemProps {
-  title: string
-  subtitle: string
-  date: string
-  href: string
-  location?: string
+  title: string;
+  subtitle: string;
+  date: string;
+  href: string;
+  location?: string;
 }
 
 const AboutItem = ({
@@ -18,7 +18,7 @@ const AboutItem = ({
   return (
     <div
       className="w-3/4 mb-1 pb-1 border-b-2 border-blurple-100 hover:border-blue hover:bg-grey-100 hover:bg-opacity-50 transition-colors hover:cursor-pointer overflow-hidden"
-      onClick={() => window.open(href, "_blank", "noopener noreferrer")}
+      onClick={() => window.open(href, '_blank', 'noopener noreferrer')}
     >
       <div className="flex flex-col p-5">
         <div className="flex justify-between">
@@ -30,12 +30,12 @@ const AboutItem = ({
         </div>
         <p className="font-light text-base">
           <em>
-            {date} {location ? `| ${location}` : ""}
+            {date} {location ? `| ${location}` : ''}
           </em>
         </p>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AboutItem
+export default AboutItem;
