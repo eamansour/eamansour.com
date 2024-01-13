@@ -35,7 +35,7 @@ const getVariants = ({
   },
 });
 
-const Index: NextPage = () => {
+export default function HomePage() {
   const [tabId, setTabId] = useState('experience');
   const tabs = {
     experience: Experience,
@@ -235,6 +235,4 @@ const Index: NextPage = () => {
       </section>
     </main>
   );
-};
-
-export default Index;
+}

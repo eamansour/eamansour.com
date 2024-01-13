@@ -1,104 +1,130 @@
-import { FaDocker, FaGit, FaHtml5, FaJava, FaJenkins, FaLinux, FaNodeJs, FaPhp, FaPython, FaReact, FaRust, FaUnity } from "react-icons/fa"
-import { SiBlender, SiCplusplus, SiCsharp, SiGo, SiJavascript, SiKotlin, SiKubernetes, SiMysql, SiNextdotjs, SiScala, SiTravisci, SiTypescript } from "react-icons/si"
+import {
+  FaDocker,
+  FaGit,
+  FaHtml5,
+  FaJava,
+  FaJenkins,
+  FaLinux,
+  FaNodeJs,
+  FaPhp,
+  FaPython,
+  FaReact,
+  FaRust,
+  FaUnity,
+} from 'react-icons/fa';
+import {
+  SiBlender,
+  SiCplusplus,
+  SiCsharp,
+  SiGo,
+  SiJavascript,
+  SiKotlin,
+  SiKubernetes,
+  SiMysql,
+  SiNextdotjs,
+  SiScala,
+  SiTravisci,
+  SiTypescript,
+} from 'react-icons/si';
 
 export const Languages = [
   {
-    name: "Java",
+    name: 'Java',
     Icon: FaJava,
   },
   {
-    name: "C#",
+    name: 'C#',
     Icon: SiCsharp,
   },
   {
-    name: "C++",
+    name: 'C++',
     Icon: SiCplusplus,
   },
   {
-    name: "Rust",
+    name: 'Rust',
     Icon: FaRust,
   },
   {
-    name: "Python",
+    name: 'Python',
     Icon: FaPython,
   },
   {
-    name: "TypeScript",
+    name: 'TypeScript',
     Icon: SiTypescript,
   },
   {
-    name: "JavaScript",
+    name: 'JavaScript',
     Icon: SiJavascript,
   },
   {
-    name: "HTML5 + CSS",
+    name: 'HTML5 + CSS',
     Icon: FaHtml5,
   },
   {
-    name: "Go",
+    name: 'Go',
     Icon: SiGo,
   },
   {
-    name: "Kotlin",
+    name: 'Kotlin',
     Icon: SiKotlin,
   },
   {
-    name: "Scala",
+    name: 'Scala',
     Icon: SiScala,
   },
   {
-    name: "PHP",
+    name: 'PHP',
     Icon: FaPhp,
   },
-]
+];
 
 export const Technologies = [
   {
-    name: "MySQL",
+    name: 'MySQL',
     Icon: SiMysql,
   },
   {
-    name: "Git",
+    name: 'Git',
     Icon: FaGit,
   },
   {
-    name: "Docker",
+    name: 'Docker',
     Icon: FaDocker,
   },
   {
-    name: "Kubernetes",
+    name: 'Kubernetes',
     Icon: SiKubernetes,
   },
   {
-    name: "Unix/Linux",
+    name: 'Unix/Linux',
     Icon: FaLinux,
   },
   {
-    name: "Travis CI",
+    name: 'Travis CI',
     Icon: SiTravisci,
   },
   {
-    name: "Jenkins",
+    name: 'Jenkins',
     Icon: FaJenkins,
   },
   {
-    name: "Node.js",
+    name: 'Node.js',
     Icon: FaNodeJs,
   },
   {
-    name: "React",
+    name: 'React',
     Icon: FaReact,
   },
   {
-    name: "Next.js",
+    name: 'Next.js',
     Icon: SiNextdotjs,
   },
   {
-    name: "Unity",
+    name: 'Unity',
     Icon: FaUnity,
   },
   {
-    name: "Blender",
+    name: 'Blender',
     Icon: SiBlender,
   },
-]
+];

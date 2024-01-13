@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 
 const title = 'Eamonn Mansour | Portfolio';
 const description = 'Eamonn Mansour, Software Engineer';
-const metadataUrl = 'https://eamansour.com'
+const metadataUrl = 'https://eamansour.com';
 const image = '/images/EM.png';
 
 export const metadata: Metadata = {
