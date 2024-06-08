@@ -1,5 +1,12 @@
 export const Projects = [
   {
+    name: 'Galasa',
+    url: 'https://galasa.dev',
+    img: 'galasa.png',
+    tags: ['Java', 'Go', 'Kubernetes', 'Gradle', 'Maven'],
+    description: 'Open source integration testing framework for z/OS and hybrid cloud applications.',
+  },
+  {
     name: 'Race Control',
     url: 'https://github.com/eamansour/RaceControl',
     img: 'racecontrol.png',
