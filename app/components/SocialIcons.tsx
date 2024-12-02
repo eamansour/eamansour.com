@@ -12,11 +12,6 @@ export const Socials = [
     Icon: FaLinkedinIn,
     href: 'https://www.linkedin.com/in/eamonn-mansour',
   },
-  {
-    name: 'CV',
-    Icon: FaFileAlt,
-    href: '/pdf/EamonnMansourCV.pdf',
-  },
 ];
 
 const iconVariants = {
