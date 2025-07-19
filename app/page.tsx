@@ -6,7 +6,6 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
-import type { NextPage } from 'next';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import Card from '@/components/Card';

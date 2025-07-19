@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaFileAlt, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export const Socials = [
   {
