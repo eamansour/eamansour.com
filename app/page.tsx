@@ -5,7 +5,7 @@ import {
   motion,
   useScroll,
   useTransform,
-} from 'framer-motion';
+} from 'motion/react';
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import Card from '@/components/Card';
@@ -199,7 +199,7 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence mode='wait'>
             {Object.entries(tabs).map(
               ([key, value]) =>
                 tabId === key && (
