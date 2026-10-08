@@ -411,6 +411,10 @@ button {
   gap: 9%;
 }
 
+.about-layout > * {
+  min-width: 0;
+}
+
 .about-copy {
   padding-top: 8px;
 }
@@ -423,6 +427,8 @@ button {
 }
 
 .career-panel {
+  width: 100%;
+  min-width: 0;
   padding: 32px;
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -437,6 +443,7 @@ button {
 
 .career-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 26px;
   margin-top: 30px;
   border-bottom: 1px solid var(--border);
@@ -492,6 +499,7 @@ button {
 .career-item h4,
 .career-item p {
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .career-item h4 {
