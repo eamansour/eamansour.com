@@ -68,6 +68,10 @@ export default function HomePage() {
           </motion.div>
         </div>
         <motion.a
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 2.5 }}
           className="scroll-cue"
           href="#projects"
           style={{ opacity: scrollCueOpacity, y: scrollCueY }}
