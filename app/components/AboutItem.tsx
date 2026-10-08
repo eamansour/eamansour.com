@@ -17,7 +17,7 @@ const AboutItem = ({
 }: AboutItemProps) => {
   return (
     <div
-      className="w-3/4 mb-1 pb-1 border-b-2 border-blurple-100 hover:border-blue hover:bg-grey-100 hover:bg-opacity-50 transition-colors hover:cursor-pointer overflow-hidden"
+      className="w-3/4 mb-1 pb-1 border-b-2 border-blurple-100 hover:border-blue hover:bg-grey-100/50 transition-colors hover:cursor-pointer overflow-hidden"
       onClick={() => window.open(href, '_blank', 'noopener noreferrer')}
     >
       <div className="flex flex-col p-5">

@@ -1,6 +1,41 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey-50: #4f5d7e;
+  --color-grey-100: #37393e;
+  --color-grey-200: #2f3136;
+  --color-grey-300: #23272a;
+  --color-blurple-100: #5866ef;
+  --color-blurple-200: #404eed;
+  --color-blue: #09b0f2;
+  --color-turqoise: #49ddc1;
+  --color-orange-50: #ffba08;
+  --color-orange-100: #faa307;
+  --color-orange-200: #f48c06;
+  --color-orange-300: #e85d04;
+
+  --font-poppins: Poppins, sans-serif;
+
+  --animate-slow-bounce: bounce 8s infinite;
+  --animate-infinite-slide: slide 70s linear infinite;
+
+  @keyframes slide {
+    0% {
+      transform: translateX(100vw);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
 
 @font-face {
   font-family: 'Poppins';
@@ -33,28 +68,43 @@
 
 html,
 body {
-  @apply scroll-smooth;
+  scroll-behavior: smooth;
 }
 
-section {
-  @apply h-full w-full;
+@layer base {
+  section {
+    height: 100%;
+    width: 100%;
+  }
 }
 
 body {
-  @apply bg-grey-300;
+  background-color: var(--color-grey-300, #e5e7eb);
 }
 
 .bg-blue-gradient {
-  @apply bg-gradient-to-tr from-blue to-blurple-100;
+  background-image: linear-gradient(to top right, var(--color-blue), var(--color-blurple-100));
+}
+
+.bg-skills-gradient {
+  background-image: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--color-grey-300) 90%, var(--color-blurple-200)),
+    color-mix(in srgb, var(--color-grey-300) 84%, var(--color-blurple-200)) 55%,
+    color-mix(in srgb, var(--color-grey-300) 78%, var(--color-blurple-200))
+  );
 }
 
 .bg-orange-gradient {
-  @apply bg-gradient-to-r from-orange-50 to-orange-300;
+  background-image: linear-gradient(to right, var(--color-orange-50), var(--color-orange-300));
 }
 
 .text-blue-gradient,
 .hover\:text-blue-gradient:hover {
-  @apply text-transparent bg-clip-text bg-blue-gradient;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(to top right, var(--color-blue), var(--color-blurple-100));
 }
 
 .tooltip:hover span {
