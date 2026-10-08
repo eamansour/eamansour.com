@@ -1,4 +1,6 @@
 import { motion } from 'motion/react';
+import type { CSSProperties } from 'react';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 interface CardProps {
   title: string;
@@ -8,60 +10,41 @@ interface CardProps {
   img: string;
 }
 
-const cardVariants = {
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      delay: 0.5,
-      duration: 0.5,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    x: -300,
-  },
-  hover: {
-    scale: 1.05,
-  },
-  tap: {
-    scale: 0.95,
-  },
-};
-
 const Card = ({ title, description, tags, url, img }: CardProps) => {
+  const cardStyle: CSSProperties & { '--project-image': string } = {
+    '--project-image': `url(/images/${img})`,
+  };
+
   return (
-    <motion.div
-      initial="hidden"
-      whileInView="visible"
-      whileHover="hover"
-      whileTap="tap"
-      viewport={{ once: true }}
-      variants={cardVariants}
-      style={{ backgroundImage: `url(/images/${img})` }}
-      className="shadow-2xl w-2/3 h-100 bg-cover bg-no-repeat rounded-xl"
+    <motion.a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${title}: ${description} (opens in a new tab)`}
+      style={cardStyle}
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -6, scale: 1.02 }}
+      whileTap={{ scale: 0.99 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.4 }}
+      className="project-card"
     >
-      <motion.a
-        target="_blank"
-        href={url}
-        className="h-full w-full flex flex-col justify-end p-10 bg-black/50 rounded-xl"
-      >
-        <motion.h3 className="pb-1 font-bold text-lg lg:text-2xl">
-          {title}
-        </motion.h3>
-        <motion.p className="pb-4">{description}</motion.p>
-        <motion.div className="mt-2 flex flex-wrap md:space-x-2">
-          {tags.map((tag) => (
-            <span
-              className="bg-grey-300 font-thin rounded-xl mb-1 px-2 text-sm"
-              key={tag}
-            >
-              {tag}
-            </span>
-          ))}
-        </motion.div>
-      </motion.a>
-    </motion.div>
+      <div className="project-card-content">
+        <div className="project-card-topline">
+          <FaExternalLinkAlt aria-hidden="true" />
+        </div>
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <div className="project-tags" aria-label="Technologies">
+            {tags.map((tag) => (
+              <span key={tag}>{tag}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.a>
   );
 };
 

@@ -34,20 +34,21 @@ const SocialIcons = () => (
     initial="hidden"
     animate="visible"
     variants={iconVariants}
-    className="flex space-x-4 mt-5 text-2xl md:text-3xl "
+    className="social-links"
+    aria-label="Social profiles"
   >
     {Socials.map(({ name, Icon, href }) => (
       <motion.a
         variants={iconVariants}
         target="_blank"
+        rel="noopener noreferrer"
         key={href}
         href={href}
-        className="hover:text-blue transition-colors tooltip flex justify-center"
+        aria-label={`Visit Eamonn's ${name} profile (opens in a new tab)`}
+        className="social-link"
       >
-        <span className="p-0.5 translate-y-full absolute opacity-0 transition-opacity text-lg font-medium">
-          {name}
-        </span>
-        <Icon />
+        <Icon aria-hidden="true" />
+        <span>{name}</span>
       </motion.a>
     ))}
   </motion.div>

@@ -7,229 +7,218 @@ import {
   useTransform,
 } from 'motion/react';
 import { useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
+import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
+import AboutItem from '@/components/AboutItem';
 import Card from '@/components/Card';
 import SkillIcons from '@/components/SkillIcons';
 import SocialIcons from '@/components/SocialIcons';
 import { Certifications, Education, Experience } from '@/data/about';
 import { Projects } from '@/data/projects';
-import AboutItem from '@/components/AboutItem';
 
-const getVariants = ({
-  startY = 0,
-  initialDelay = 0,
-  initialDuration = 1,
-}) => ({
+const tabs = {
+  experience: Experience,
+  education: Education,
+  certifications: Certifications,
+};
+
+const sectionMotion = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      delay: initialDelay,
-      duration: initialDuration,
-    },
+    transition: { duration: 0.55, ease: 'easeOut' as const },
   },
-  hidden: {
-    opacity: 0,
-    y: startY,
-  },
-});
+};
 
 export default function HomePage() {
-  const [tabId, setTabId] = useState('experience');
-  const tabs = {
-    experience: Experience,
-    education: Education,
-    certifications: Certifications,
-  };
+  const [tabId, setTabId] = useState<keyof typeof tabs>('experience');
   const { scrollYProgress } = useScroll();
-  const scrollDownRange = [0, 0.15];
-  const opacity = useTransform(scrollYProgress, scrollDownRange, [1, 0]);
-  const y = useTransform(scrollYProgress, scrollDownRange, [0, 50]);
+  const progressScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const scrollCueOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const scrollCueY = useTransform(scrollYProgress, [0, 0.15], [0, 50]);
 
   return (
-    <main className="font-poppins text-white">
-      <section id="intro" className="h-screen pb-10 flex flex-col">
-        <div className="h-full flex flex-col justify-center items-center text-center">
-          <motion.h1
+    <main className="portfolio">
+      <motion.div
+        aria-hidden="true"
+        className="scroll-progress"
+        style={{ scaleX: progressScale }}
+      />
+
+      <section id="intro" className="hero">
+        <div className="content-shell hero-content">
+          <motion.div
             initial="hidden"
             animate="visible"
-            variants={getVariants({ startY: 30 })}
-            className="text-blue-gradient font-bold text-3xl md:text-5xl lg:text-6xl"
+            variants={sectionMotion}
+            className="hero-copy"
           >
-            Eamonn Mansour
-          </motion.h1>
-          <motion.h2
-            initial="hidden"
-            animate="visible"
-            variants={getVariants({ startY: 30, initialDelay: 0.2 })}
-            className="mx-10 mt-2 font-thin text-base md:text-lg lg:text-2xl"
-          >
-            Software Engineer at{' '}
-            <a
-              className="text-blue font-medium hover:text-blurple-100 transition-colors"
-              href="https://www.ibm.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              IBM
-            </a>
-          </motion.h2>
-          <SocialIcons />
-        </div>
-        <motion.div style={{ opacity, y }} className="mb-1 flex justify-center">
-          <motion.a
-            initial="hidden"
-            animate="visible"
-            variants={getVariants({ startY: 0, initialDelay: 3 })}
-            href="#projects"
-            className="flex flex-col items-center hover:text-blue transition-colors"
-          >
-            <FaChevronDown className="h-7 w-7 animate-bounce" />
-            <span className="m-1">Scroll down</span>
-          </motion.a>
-        </motion.div>
-      </section>
-      <section
-        id="projects"
-        className="pb-20 bg-grey-200 flex flex-col items-center"
-      >
-        <motion.h1
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={getVariants({ startY: 30 })}
-          className="text-xl font-bold my-16 md:text-4xl"
-        >
-          Latest Projects
-        </motion.h1>
-        <div className="container w-full h-full flex flex-col space-y-7 items-center">
-          {Projects.map((project) => (
-            <Card
-              key={project.name}
-              title={project.name}
-              description={project.description}
-              tags={project.tags}
-              url={project.url}
-              img={project.img}
-            />
-          ))}
-        </div>
-      </section>
-      <section className="h-full py-20 flex flex-col items-center bg-skills-gradient">
-        <motion.h1
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={getVariants({
-            startY: 30,
-            initialDelay: 0.2,
-            initialDuration: 0.5,
-          })}
-          className="text-xl font-bold md:text-4xl"
-        >
-          Skills
-        </motion.h1>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={getVariants({ startY: 30, initialDelay: 0.5 })}
-          className="flex flex-col items-center m-5 p-5"
-        >
-          <p className="container px-5 pb-5 md:text-lg font-medium">
-            One of the essential qualities of a software engineer is the ability
-            to pick up new skills and stay up-to-date with the latest
-            technologies, so here are some technologies that I use frequently!
-          </p>
-          <SkillIcons />
-        </motion.div>
-      </section>
-      <section
-        id="about"
-        className="px-10 py-20 flex flex-col items-center bg-grey-200 "
-      >
-        <motion.h1
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={getVariants({
-            startY: 30,
-            initialDelay: 0.2,
-            initialDuration: 0.5,
-          })}
-          className="font-bold text-xl md:text-4xl"
-        >
-          About
-        </motion.h1>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={getVariants({
-            startY: 50,
-            initialDelay: 0.2,
-            initialDuration: 0.5,
-          })}
-          className="w-full lg:w-1/2 text-base md:text-lg m-5 p-5 font-medium"
-        >
-          <p>
-            Passionate software engineer with interests in VR/AR, cloud
-            computing, and game development. Combining my creativity and
-            technical skills, I enjoy building all kinds of software, including
-            video games, web and desktop apps, and CLI tools.
-          </p>
-          <br />
-          <p>
-            When I&apos;m not working, you&apos;ll find me playing video games,
-            catching up on everything Marvel, and going karting.
-          </p>
-        </motion.div>
-        <hr className="text-transparent w-1/2 mb-5 pb-1 bg-blue-gradient rounded-xl" />
-        <div className="w-full xl:w-2/3 flex flex-col overflow-x-hidden">
-          <ul className="flex flex-col items-center md:flex-row md:justify-center text-xl font-bold">
-            {Object.entries(tabs).map(([key, _]) => (
-              <li
-                key={key}
-                className={`mx-5 my-2 ${
-                  tabId === key ? 'text-blue' : ''
-                } hover:text-blurple-100 transition-colors hover:cursor-pointer capitalize`}
-                onClick={() => setTabId(key)}
+            <h1 className="hero-name">Eamonn Mansour</h1>
+            <h2 className="hero-title">
+              Software Engineer at{' '}
+              <a
+                href="https://www.ibm.com/"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {key}
-              </li>
+                IBM
+              </a>
+            </h2>
+            <SocialIcons />
+          </motion.div>
+        </div>
+        <motion.a
+          className="scroll-cue"
+          href="#projects"
+          style={{ opacity: scrollCueOpacity, y: scrollCueY }}
+        >
+          <span>Scroll to explore</span>
+          <FaChevronDown
+            aria-hidden="true"
+            className="scroll-cue-icon animate-bounce"
+          />
+        </motion.a>
+      </section>
+
+      <section id="projects" className="content-section projects-section">
+        <div className="content-shell">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionMotion}
+            className="section-heading"
+          >
+            <h2 className="section-title">Projects</h2>
+            <p className="section-description">
+              A mix of open-source engineering, experiments, and things I
+              built simply because they were interesting.
+            </p>
+          </motion.div>
+          <div className="project-grid">
+            {Projects.map((project) => (
+              <Card
+                key={project.name}
+                title={project.name}
+                description={project.description}
+                tags={project.tags}
+                url={project.url}
+                img={project.img}
+              />
             ))}
-          </ul>
-          <AnimatePresence mode='wait'>
-            {Object.entries(tabs).map(
-              ([key, value]) =>
-                tabId === key && (
-                  <motion.div
-                    key={key}
-                    id={key}
-                    initial="hidden"
-                    animate="visible"
-                    exit="hidden"
-                    variants={{
-                      hidden: { opacity: 0, x: '100vw' },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                    transition={{ duration: 0.5 }}
-                    className="flex flex-col items-center justify-center my-5"
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" className="content-section skills-section">
+        <div className="content-shell">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionMotion}
+            className="section-heading"
+          >
+            <h2 className="section-title">Skills &amp; tools</h2>
+            <p className="section-description">
+              The technologies I reach for, and the tools that help turn ideas
+              into reliable software.
+            </p>
+          </motion.div>
+          <SkillIcons />
+        </div>
+      </section>
+
+      <section id="about" className="content-section about-section">
+        <div className="content-shell about-layout">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={sectionMotion}
+            className="about-copy"
+          >
+            <h2 className="section-title">About me</h2>
+            <p>
+              I&apos;m a software engineer with interests in cloud computing,
+              VR/AR, and game development. I enjoy working across different
+              kinds of software — from web and desktop apps to games and
+              command-line tools.
+            </p>
+            <p>
+              Away from the keyboard, you&apos;ll find me playing video games,
+              catching up on everything Marvel, or going karting.
+            </p>
+          </motion.div>
+
+          <div className="career-panel">
+            <h3 className="career-heading">Experience &amp; background</h3>
+            <div
+              className="career-tabs"
+              role="tablist"
+              aria-label="Career details"
+            >
+              {Object.keys(tabs).map((key) => {
+                const tab = key as keyof typeof tabs;
+                return (
+                  <button
+                    key={tab}
+                    id={`tab-${tab}`}
+                    type="button"
+                    role="tab"
+                    aria-selected={tabId === tab}
+                    aria-controls={`panel-${tab}`}
+                    className={`career-tab${tabId === tab ? ' active' : ''}`}
+                    onClick={() => setTabId(tab)}
                   >
-                    {value.map((item, index) => (
-                      <AboutItem
-                        key={`${item.title}-${index}`}
-                        title={item.title}
-                        subtitle={item.subtitle}
-                        date={item.date}
-                        href={item.href}
-                        location={item.location}
-                      />
-                    ))}
-                  </motion.div>
-                )
-            )}
-          </AnimatePresence>
+                    {tab}
+                  </button>
+                );
+              })}
+            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={tabId}
+                id={`panel-${tabId}`}
+                role="tabpanel"
+                aria-labelledby={`tab-${tabId}`}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.2 }}
+                className="career-list"
+              >
+                {tabs[tabId].map((item, index) => (
+                  <AboutItem
+                    key={`${item.title}-${index}`}
+                    title={item.title}
+                    subtitle={item.subtitle}
+                    date={item.date}
+                    href={item.href}
+                    location={item.location}
+                  />
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </section>
+
+      <section className="contact-section">
+        <div className="contact-content">
+          <h2 className="section-title">Get in touch</h2>
+          <p>
+            I&apos;m always happy to connect with fellow engineers and
+            professionals.
+          </p>
+          <a
+            href="https://www.linkedin.com/in/eamonn-mansour"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-button"
+          >
+            Say hello on LinkedIn <FaArrowRight aria-hidden="true" />
+          </a>
         </div>
       </section>
     </main>

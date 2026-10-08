@@ -1,70 +1,36 @@
 import { motion } from 'motion/react';
 import { Languages, Technologies } from '@/data/skills';
 
-const iconVariants = (startY: number) => ({
-  hover: {
-    y: -10,
-    transition: {
-      duration: 0.7,
-    },
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.2,
-      duration: 0.5,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    y: startY,
-  },
-});
+const SkillGroup = ({
+  title,
+  skills,
+}: {
+  title: string;
+  skills: typeof Languages;
+}) => (
+  <div className="skill-group">
+    <h3>{title}</h3>
+    <ul>
+      {skills.map(({ name, Icon }) => (
+        <motion.li
+          key={name}
+          whileHover={{ y: -5 }}
+          transition={{ duration: 0.18 }}
+          className="skill-item"
+        >
+          <Icon aria-hidden="true" />
+          <span>{name}</span>
+        </motion.li>
+      ))}
+    </ul>
+  </div>
+);
 
-const SkillIcons = () => {
-  return (
-    <div className="pt-5 flex flex-col md:flex-row text-lg md:text-2xl font-bold whitespace-nowrap">
-      <div className="flex flex-col items-center">
-        <h2>Languages</h2>
-        <ul className="p-3 grid grid-cols-2 xl:grid-cols-3 text-4xl xl:text-6xl">
-          {Languages.map(({ name, Icon }) => (
-            <motion.li
-              key={name}
-              initial="hidden"
-              whileInView="visible"
-              whileHover="hover"
-              viewport={{ once: true }}
-              variants={iconVariants(-50)}
-              className={`md:mx-14 p-5 flex flex-col items-center hover:text-orange-50 transition-colors`}
-            >
-              <Icon />
-              <p className="p-2 text-sm md:text-lg font-medium">{name}</p>
-            </motion.li>
-          ))}
-        </ul>
-      </div>
-      <div className="flex flex-col items-center">
-        <h2>Technologies</h2>
-        <ul className="p-3 grid grid-cols-2 xl:grid-cols-3 text-4xl xl:text-6xl">
-          {Technologies.map(({ name, Icon }) => (
-            <motion.li
-              key={name}
-              initial="hidden"
-              whileInView="visible"
-              whileHover="hover"
-              viewport={{ once: true }}
-              variants={iconVariants(50)}
-              className="md:mx-14 p-5 flex flex-col items-center hover:text-orange-50 transition-colors"
-            >
-              <Icon />
-              <p className="p-2 text-sm md:text-lg font-medium">{name}</p>
-            </motion.li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  );
-};
+const SkillIcons = () => (
+  <div className="skills-grid">
+    <SkillGroup title="Languages" skills={Languages} />
+    <SkillGroup title="Technologies & tools" skills={Technologies} />
+  </div>
+);
 
 export default SkillIcons;

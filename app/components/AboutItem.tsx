@@ -1,4 +1,4 @@
-import { FiExternalLink } from 'react-icons/fi';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 export interface AboutItemProps {
   title: string;
@@ -14,28 +14,20 @@ const AboutItem = ({
   date,
   href,
   location,
-}: AboutItemProps) => {
-  return (
-    <div
-      className="w-3/4 mb-1 pb-1 border-b-2 border-blurple-100 hover:border-blue hover:bg-grey-100/50 transition-colors hover:cursor-pointer overflow-hidden"
-      onClick={() => window.open(href, '_blank', 'noopener noreferrer')}
-    >
-      <div className="flex flex-col p-5">
-        <div className="flex justify-between">
-          <h3 className="font-semibold text-lg">
-            {title}
-            <span className="font-medium"> | {subtitle}</span>
-          </h3>
-          <FiExternalLink className="hidden md:block text-lg" />
-        </div>
-        <p className="font-light text-base">
-          <em>
-            {date} {location ? `| ${location}` : ''}
-          </em>
-        </p>
-      </div>
+}: AboutItemProps) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="career-item"
+  >
+    <div>
+      <h4>{title}</h4>
+      <p className="career-subtitle">{subtitle}</p>
+      <p className="career-meta">{date}{location ? ` · ${location}` : ''}</p>
     </div>
-  );
-};
+    <FaExternalLinkAlt aria-hidden="true" />
+  </a>
+);
 
 export default AboutItem;
