@@ -115,7 +115,7 @@ export default function HomePage() {
           ))}
         </div>
       </section>
-      <section className="h-full py-20 flex flex-col items-center bg-blue-gradient">
+      <section className="h-full py-20 flex flex-col items-center bg-skills-gradient">
         <motion.h1
           initial="hidden"
           whileInView="visible"

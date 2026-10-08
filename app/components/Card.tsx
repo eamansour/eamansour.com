@@ -39,12 +39,12 @@ const Card = ({ title, description, tags, url, img }: CardProps) => {
       viewport={{ once: true }}
       variants={cardVariants}
       style={{ backgroundImage: `url(/images/${img})` }}
-      className="shadow-2xl w-2/3 h-[400px] bg-cover bg-no-repeat rounded-xl"
+      className="shadow-2xl w-2/3 h-100 bg-cover bg-no-repeat rounded-xl"
     >
       <motion.a
         target="_blank"
         href={url}
-        className="h-full w-full flex flex-col justify-end p-10 bg-black bg-opacity-70 rounded-xl"
+        className="h-full w-full flex flex-col justify-end p-10 bg-black/50 rounded-xl"
       >
         <motion.h3 className="pb-1 font-bold text-lg lg:text-2xl">
           {title}
