@@ -3,10 +3,8 @@ import {
   FaGit,
   FaHtml5,
   FaJava,
-  FaJenkins,
   FaLinux,
   FaNodeJs,
-  FaPhp,
   FaPython,
   FaReact,
   FaRust,
@@ -15,17 +13,17 @@ import {
 import {
   SiBlender,
   SiCplusplus,
-  SiCsharp,
+  SiElasticstack,
+  SiGithubactions,
   SiGo,
   SiJavascript,
   SiKotlin,
   SiKubernetes,
   SiMysql,
   SiNextdotjs,
-  SiScala,
-  SiTravisci,
   SiTypescript,
 } from 'react-icons/si';
+import { TbBrandCSharp } from 'react-icons/tb';
 
 export const Languages = [
   {
@@ -33,20 +31,24 @@ export const Languages = [
     Icon: FaJava,
   },
   {
+    name: 'Go',
+    Icon: SiGo,
+  },
+  {
     name: 'C#',
-    Icon: SiCsharp,
+    Icon: TbBrandCSharp,
   },
   {
     name: 'C++',
     Icon: SiCplusplus,
   },
   {
-    name: 'Rust',
-    Icon: FaRust,
-  },
-  {
     name: 'Python',
     Icon: FaPython,
+  },
+  {
+    name: 'Rust',
+    Icon: FaRust,
   },
   {
     name: 'TypeScript',
@@ -61,20 +63,8 @@ export const Languages = [
     Icon: FaHtml5,
   },
   {
-    name: 'Go',
-    Icon: SiGo,
-  },
-  {
     name: 'Kotlin',
     Icon: SiKotlin,
-  },
-  {
-    name: 'Scala',
-    Icon: SiScala,
-  },
-  {
-    name: 'PHP',
-    Icon: FaPhp,
   },
 ];
 
@@ -84,8 +74,16 @@ export const Technologies = [
     Icon: SiMysql,
   },
   {
-    name: 'Git',
-    Icon: FaGit,
+    name: 'React',
+    Icon: FaReact,
+  },
+  {
+    name: 'Next.js',
+    Icon: SiNextdotjs,
+  },
+  {
+    name: 'Node.js',
+    Icon: FaNodeJs,
   },
   {
     name: 'Docker',
@@ -96,28 +94,20 @@ export const Technologies = [
     Icon: SiKubernetes,
   },
   {
+    name: 'GitHub Actions',
+    Icon: SiGithubactions,
+  },
+  {
     name: 'Unix/Linux',
     Icon: FaLinux,
   },
   {
-    name: 'Travis CI',
-    Icon: SiTravisci,
+    name: 'Git',
+    Icon: FaGit,
   },
   {
-    name: 'Jenkins',
-    Icon: FaJenkins,
-  },
-  {
-    name: 'Node.js',
-    Icon: FaNodeJs,
-  },
-  {
-    name: 'React',
-    Icon: FaReact,
-  },
-  {
-    name: 'Next.js',
-    Icon: SiNextdotjs,
+    name: 'Elastic Stack',
+    Icon: SiElasticstack,
   },
   {
     name: 'Unity',
